@@ -8,18 +8,18 @@ class CursoController extends Controller
 {
     public function index()
     {
-        return 'Hola desde el index de CursoController';
+        return view('courses.index');
     }
 
     public function create()
     {
-        return 'Hola desde el create de CursoController';
+        return view('courses.create');
 
     }
 
     public function show($id)
     {
-        return "Hola desde el show de CursoController $id";
+        return view('courses.show', compact('id'));
 
     }
 }
