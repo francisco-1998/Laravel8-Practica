@@ -25,5 +25,7 @@ class CourseSeeder extends Seeder
         $course2->description = 'Es un framework bacanisimo, me sentia bot hace unos meses y ahora ya le estoy agarrando la onda';
         $course2->category = "Desarrollo backend";
         $course2->save();
+
+        Course::factory(20)->create();
     }
 }
