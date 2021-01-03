@@ -16,11 +16,16 @@ use App\Http\Controllers\CursoController;
 */
 
 //Sistemas de rutas actual
-// Route::get('/', HomeController::class);
 Route::get('/',  [CursoController::class, 'index'])->name('cursos.index');
-// Route::get('curso', [CursoController::class, 'index']);
 Route::get('curso/create', [CursoController::class, 'create'])->name('curso.create');
-Route::get('curso/show/{curso}', [CursoController::class, 'show'])->name('cursos.show');
+Route::post('curso/store', [CursoController::class, 'store'])->name('curso.store');
+Route::get('curso/show/{curso}', [CursoController::class, 'show'])->name('curso.show');
+Route::get('curso/{curso}/edit', [CursoController::class, 'edit'])->name('curso.edit');
+Route::put('curso/{curso}/update', [CursoController::class, 'update'])->name('curso.update');
+
+
+
+
 
 
 //Sistemas de rutas antiguo
