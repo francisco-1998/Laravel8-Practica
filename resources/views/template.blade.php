@@ -8,6 +8,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
+    @include('layouts.header')
     @yield('content')
 </body>
 </html>

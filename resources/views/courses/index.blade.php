@@ -1,8 +1,22 @@
 @extends('template')
 
-@section('title', 'Welcome')
+@section('title', 'Cursos')
 
 
 @section('content')
-    <h1>Hola desde la vista principal de cursos</h1>
+<div class="container mx-auto py-5">
+    <h1 class="text-2xl font-medium uppercase">Lista de cursos actuales</h1>
+    <div class="pl-4">
+        <ul>
+            @foreach ($cursos as $item)
+                <li>
+                    <a href="{{ route('cursos.show', $item)}}">{{ $item->name }}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+</div>
+<div class="pl-8 pr-8">
+    {{ $cursos->links() }}
+</div>
 @endsection
