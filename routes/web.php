@@ -26,7 +26,7 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get('/', [CursoController::class, 'index']);
-Route::resource('curso', CursoController::class);
+Route::resource('asignaturas', CursoController::class)->names('curso')->parameters(['asignaturas'=>'curso']);
 
 
 
