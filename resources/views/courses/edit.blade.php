@@ -12,17 +12,32 @@
             @method('PUT')
             <label for="text" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Nombre del curso</label>
             <input id="name" type="text" name="name"
-                class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" value="{{ $curso->name }}"/>
+                class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" value="{{ old('name', $curso->name) }}"/>
+                @error('name')
+                <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-2 ml-1">
+                    {{ $message }}
+                </span>
+                @enderror
+
 
             <label for="text" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Descripcion del curso</label>
             <input id="description" type="text" name="description"
-                class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  value="{{ $curso->description }}" />
+                class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  value="{{ old('description', $curso->description) }}" />
+                @error('description')
+                <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-2 ml-1">
+                    {{ $message }}
+                </span>
+                @enderror
 
             <label for="text" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Categoria del curso</label>
             <input id="category" type="text" name="category"
-                class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  value="{{ $curso->category }}"/>
+                class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  value="{{ old('category', $curso->category) }}"/>
+                @error('category')
+                <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-2 ml-1">
+                    {{ $message }}
+                </span>
+                @enderror
 
-            
 
             <button type="submit"
                 class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
