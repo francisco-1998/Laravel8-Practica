@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +16,17 @@ use App\Http\Controllers\CursoController;
 */
 
 //Sistemas de rutas actual
-Route::get('/',  [CursoController::class, 'index'])->name('cursos.index');
-Route::get('curso/create', [CursoController::class, 'create'])->name('curso.create');
-Route::post('curso/store', [CursoController::class, 'store'])->name('curso.store');
-Route::get('curso/show/{curso}', [CursoController::class, 'show'])->name('curso.show');
-Route::get('curso/{curso}/edit', [CursoController::class, 'edit'])->name('curso.edit');
-Route::put('curso/{curso}/update', [CursoController::class, 'update'])->name('curso.update');
-Route::delete('users/{curso}/delete', [CursoController::class, 'destroy'])->name('curso.delete');
+// Route::get('/',  [CursoController::class, 'index'])->name('curso.index');
+// Route::get('curso/create', [CursoController::class, 'create'])->name('curso.create');
+// Route::post('curso/store', [CursoController::class, 'store'])->name('curso.store');
+// Route::get('curso/show/{curso}', [CursoController::class, 'show'])->name('curso.show');
+// Route::get('curso/{curso}/edit', [CursoController::class, 'edit'])->name('curso.edit');
+// Route::put('curso/{curso}/update', [CursoController::class, 'update'])->name('curso.update');
+// Route::delete('users/{curso}/delete', [CursoController::class, 'destroy'])->name('curso.delete');
+
+
+Route::get('/', [CursoController::class, 'index']);
+Route::resource('curso', CursoController::class);
 
 
 

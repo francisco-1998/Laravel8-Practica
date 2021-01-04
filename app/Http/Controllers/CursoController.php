@@ -75,6 +75,6 @@ class CursoController extends Controller
     public function destroy(Course $curso)
     {
         $curso->delete();
-        return redirect()->route('cursos.index');
+        return redirect()->route('curso.index');
     }
 }

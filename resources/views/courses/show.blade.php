@@ -24,7 +24,7 @@
                             Editar
                           </a>
                             <div class="inline-block">
-                                <form action="{{ route('curso.delete', $curso) }}" method="POST">
+                                <form action="{{ route('curso.destroy', $curso) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="px-6 py-2 text-xs font-medium leading-1 text-right text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none">Eliminar</button>
