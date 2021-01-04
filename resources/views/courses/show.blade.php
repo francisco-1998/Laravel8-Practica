@@ -13,16 +13,25 @@
             <div class="px-4 py-2 mt-2 bg-white">
                 <h2 class="font-bold text-2xl text-gray-800">{{ $curso->name }}</h2>
                     <div class="grid grid-cols-6 gap-4">
-                        <div class="col-start-1 col-end-7">
+                        <div class="col-start-1 col-end-12">
                             <p class="sm:text-sm text-xs text-gray-700 px-2 mr-1 my-3">
                                 {{ $curso->description }}
                             </p>
                         </div>
+
                         <div class="col-end-12 col-span-1">
-                            <a href="{{ route('curso.edit', $curso) }}" class="inline-block px-6 py-3 text-xs font-medium leading-1 text-right text-white uppercase transition bg-indigo-500 rounded shadow ripple hover:shadow-lg hover:bg-indigo-600 focus:outline-none">
+                            <a href="{{ route('curso.edit', $curso) }}" class="inline-block px-6 py-2 text-xs font-medium leading-1 text-center text-white uppercase transition bg-indigo-500 rounded shadow ripple hover:shadow-lg hover:bg-indigo-600 focus:outline-none">
                             Editar
                           </a>
+                            <div class="inline-block">
+                                <form action="{{ route('curso.delete', $curso) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="px-6 py-2 text-xs font-medium leading-1 text-right text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none">Eliminar</button>
+                                </form>
+                            </div>
                         </div>
+                    </div>
                     </div>
             </div>
         </div>
